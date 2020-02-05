@@ -15,3 +15,5 @@ I need reports that tell me about pictures per day, month and year.
 I need reports on possible missing pictures over time.
 
 I need files to be checked for corruption.
+
+I need to filter out TIFFs, JPGs, PSDs into separate folders for handling.
