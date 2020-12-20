@@ -7,6 +7,10 @@ RSpec.describe Inspector, type: :model do
   let(:canon_1dx_file) { '_G4R6399.CR2' }
 
   describe 'reading Files' do
+    context 'with a Canon 1DIII file' do
+      # let(:inspected) { inspector.read(canon_5dii_file) }
+    end
+
     context 'with a Canon 1DX file' do
       let(:inspected) { inspector.read(canon_1dx_file) }
 

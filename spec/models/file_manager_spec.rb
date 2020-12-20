@@ -20,7 +20,8 @@ RSpec.describe FileManager, type: :model do
     end
 
     it 'should create the nested folders' do
-      pending
+      pending "Unwritten code"
+      fail
     end
 
     after(:all) do
