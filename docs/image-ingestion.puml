@@ -1,0 +1,48 @@
+@startuml
+(*)  --> "check input"
+If "input is verbose" then
+--> [Yes] "turn on verbosity"
+--> "run command"
+else
+--> "run command"
+Endif
+-->(*)
+@enduml
+
+
+@startuml
+
+(*) --> "Pick Volume"
+--> if "Top Level" then
+    -->[true] "Set Top Level"
+else
+    -->[true] "Recursive"
+endif
+
+--> if "Some Test" then
+
+  -->[true] "action 1"
+
+  if "" then
+    -> "action 3" as a3
+  else
+    if "Other test" then
+      -left-> "action 5"
+    else
+      --> "action 6"
+    endif
+  endif
+
+else
+
+  ->[false] "action 2"
+
+endif
+
+a3 --> if "last test" then
+  --> "action 7"
+else
+  -> "action 8"
+endif
+
+@enduml

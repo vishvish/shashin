@@ -31,5 +31,8 @@ module Shashin
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.autoload_paths += ["#{Rails.root}/app/jobs", "#{Rails.root}/app/workflows"]
+    config.active_job.queue_adapter = :resque
   end
 end

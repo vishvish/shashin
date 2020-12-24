@@ -17,3 +17,33 @@ I need reports on possible missing pictures over time.
 I need files to be checked for corruption.
 
 I need to filter out TIFFs, JPGs, PSDs into separate folders for handling.
+
+---
+
+### Getting workflows of jobs working with ActiveJob
+
+Clone the repo and install the deps:
+
+    bundle
+
+Run Redis on the default port, 6379. You could run the docker container:
+
+    docker run --name shashin-redis -p 6379:6379 -d redis
+
+#### Open some terminal panes.
+
+Run the app in one:
+
+    rails s
+
+Run some Resque workers in another:
+
+    COUNT=2 QUEUE=gush rake resque:workers
+
+Tail the development log in another:
+
+    tail -f log/development.log
+
+And trigger a workflow in another:
+
+    rake workflow
